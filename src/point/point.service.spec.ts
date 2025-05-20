@@ -56,6 +56,9 @@ describe('PointService', () => {
 
     // PointService 특정 유저의 포인트를 조회하는 로직이 있나?
     it('should not exist point check method', async () => {
+      // 위에서 내려오는 selectById를 초기화한다.
+      mockUserPointTable.selectById.mockClear();
+
       // mock으로 데이터를 생성한다.
       mockUserPointTable.selectById.mockResolvedValue({ id: 1, point: 10000 });
 
@@ -67,6 +70,9 @@ describe('PointService', () => {
         result: 'success',
         message: { userId: 1, point: 10000 },
       });
+
+      // selectById가 1번 호출됐나?
+      expect(mockUserPointTable.selectById).toHaveBeenCalledTimes(1);
     });
   });
 });
