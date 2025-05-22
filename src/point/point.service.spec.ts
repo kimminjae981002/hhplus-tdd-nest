@@ -3,7 +3,7 @@ import { PointService } from './point.service';
 import { UserPointTable } from 'src/database/userpoint.table';
 import { PointHistoryTable } from 'src/database/pointhistory.table';
 
-// PointService 테스트 정의
+// PointService 테스트 정의 PR
 describe('PointService', () => {
   let service: PointService;
 
